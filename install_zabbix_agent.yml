@@ -1,0 +1,12 @@
+services:
+ 
+  zabbix-agent:
+    image: zabbix/zabbix-agent
+    container_name: zabbix-agent
+    hostname: zabbix-agent
+    restart: unless-stopped
+    environment:
+      TZ: "Europe/Moscow"
+      ZBX_SERVER_HOST: "192.168.146.142"
+    ports:
+      - 10050:10050
